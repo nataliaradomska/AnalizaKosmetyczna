@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case 3: {
-                        startActivity(new Intent(MainActivity.this, Favourites.class));
+                        startActivity(new Intent(MainActivity.this, Results.class));
                         break;
                     }
                     default: {

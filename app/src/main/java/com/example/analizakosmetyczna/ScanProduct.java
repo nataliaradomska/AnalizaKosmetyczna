@@ -87,7 +87,6 @@ public class ScanProduct extends AppCompatActivity {
         if (!recognizer.isOperational()) {
             Toast.makeText(ScanProduct.this, "Error", Toast.LENGTH_SHORT);
         }
-
         else {
             Frame frame = new Frame.Builder().setBitmap(bitmap).build();
             SparseArray<TextBlock> textBlockSparseArray = recognizer.detect(frame);
