@@ -8,7 +8,7 @@
     android:background="@drawable/main_background">
 
         <EditText
-            android:id="@+id/usernamee"
+            android:id="@+id/tv_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -25,7 +25,7 @@
 
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/tv_mail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="160dp"
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/passwordd"
+            android:id="@+id/tv_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="72dp"
@@ -55,10 +55,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_mail" />
 
         <EditText
-            android:id="@+id/passwoddrd"
+            android:id="@+id/tv_passwordr"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -72,51 +72,53 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_mail" />
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/btn_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="288dp"
             android:background="@color/purple_200"
-            android:enabled="false"
+            android:enabled="true"
+            android:onClick="register"
             android:padding="30px"
             android:text="Zarejestruj się"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            app:layout_constraintVertical_bias="0.14" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_password"
+            app:layout_constraintVertical_bias="0.555" />
 
         <TextView
-            android:id="@+id/text_view_id"
+            android:id="@+id/tv_have_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="152dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="156dp"
             android:text="Masz już konto?"
-            app:layout_constraintBottom_toTopOf="@+id/text_view_id1"
+            app:layout_constraintBottom_toTopOf="@+id/tv_loginacc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/text_view_id1"
+            android:id="@+id/tv_loginacc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
             android:layout_marginEnd="128dp"
             android:clickable="true"
+            android:onClick="toLogin"
             android:text="Zaloguj się!"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_id"
+            app:layout_constraintTop_toBottomOf="@+id/tv_have_account"
             tools:ignore="MissingConstraints" />
 
         <ProgressBar
@@ -128,8 +130,8 @@
             android:layout_marginTop="64dp"
             android:layout_marginBottom="64dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/password"
-            app:layout_constraintStart_toStartOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="@+id/tv_pass"
+            app:layout_constraintStart_toStartOf="@+id/tv_pass"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3" />
 
