@@ -35,7 +35,7 @@ public class Rejestracja extends AppCompatActivity {
 
         error = "";
         tv_mail = findViewById(R.id.tv_mail);
-        tv_name = findViewById(R.id.tv_name);
+        tv_name = findViewById(R.id.tv_ingredients);
         tv_pass = findViewById(R.id.tv_password);
         tv_passr = findViewById(R.id.tv_passwordr);
         emails = new ArrayList<String>();

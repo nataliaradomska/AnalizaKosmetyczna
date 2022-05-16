@@ -33,7 +33,7 @@
         android:layout_marginBottom="91dp"
         android:text="(np.: AQUA, GLYCERIN, BUTYLENE GLYCOL, CYCLOPENTASILOKSANE, TALC, COLLAGEN, POLYMETHYL METHORYLATE GLYCERYL, ALGAE EXTRACT, SUCROSE, ... i tak dalej)"
         android:textSize="35px"
-        app:layout_constraintBottom_toTopOf="@+id/tv_name"
+        app:layout_constraintBottom_toTopOf="@+id/tv_ingredients"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,14 +41,14 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/tv_name"
+        android:id="@+id/tv_ingredients"
         android:layout_width="900px"
         android:layout_height="500px"
         android:layout_marginTop="248dp"
         android:layout_marginBottom="53dp"
         android:background="@color/white"
         android:selectAllOnFocus="true"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintBottom_toTopOf="@+id/btn_analyse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:hint=" Wpisz składniki kosmetyku po przecinku..."
@@ -57,20 +57,20 @@
         android:textSize="35px"/>
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_analyse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="70dp"
         android:background="@color/purple_200"
-        android:enabled="false"
+        android:onClick="login"
         android:padding="30px"
         android:text="Analizuj"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_ingredients" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

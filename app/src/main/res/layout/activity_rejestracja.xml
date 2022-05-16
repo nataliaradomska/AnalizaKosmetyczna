@@ -8,7 +8,7 @@
     android:background="@drawable/main_background">
 
         <EditText
-            android:id="@+id/tv_name"
+            android:id="@+id/tv_ingredients"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -75,7 +75,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_mail" />
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_analyse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -104,7 +104,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_loginacc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login"
+            app:layout_constraintTop_toBottomOf="@+id/btn_analyse"
             tools:ignore="MissingConstraints" />
 
         <TextView

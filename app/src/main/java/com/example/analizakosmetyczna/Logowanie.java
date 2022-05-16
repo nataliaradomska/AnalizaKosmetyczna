@@ -40,7 +40,7 @@ public class Logowanie extends AppCompatActivity {
         tv_mail = findViewById(R.id.tv_mail);
         tv_pass = findViewById(R.id.tv_pass);
         tv_hello = findViewById(R.id.tv_hello);
-        btn_login = findViewById(R.id.btn_login);
+        btn_login = findViewById(R.id.btn_analyse);
 
         user = new User(getApplicationContext());
         i_logged = new Intent(this, MainActivity.class);

@@ -39,7 +39,7 @@
             android:padding="30px"/>
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_analyse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/purple_200"
@@ -69,7 +69,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_login"
+            app:layout_constraintTop_toBottomOf="@+id/btn_analyse"
             tools:ignore="MissingConstraints" />
 
         <ProgressBar
