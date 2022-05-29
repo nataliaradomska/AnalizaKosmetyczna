@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="500px"
         android:background="@drawable/naglowek" />
-
     <Button
         android:id="@+id/sign_in_btn1"
         android:layout_width="wrap_content"

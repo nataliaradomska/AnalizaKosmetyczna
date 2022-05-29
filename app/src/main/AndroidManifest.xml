@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AnalizaKosmetyczna">
         <activity
+            android:name=".Products"
+            android:exported="false" />
+        <activity
             android:name=".Results"
             android:exported="false" />
         <activity

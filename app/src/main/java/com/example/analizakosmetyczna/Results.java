@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class Results extends AppCompatActivity {
 
-    // globally
     TextView tv_polecam, tv_polecam_ale, tv_nie_polecam;
     int polecam, polecam_ale, nie_polecam;
 

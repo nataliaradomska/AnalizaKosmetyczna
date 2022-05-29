@@ -1,6 +1,5 @@
 package com.example.analizakosmetyczna;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -22,8 +21,8 @@ public class IngredientListAdapter extends ArrayAdapter<Ingredient> {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
-
     }
+
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -35,6 +34,7 @@ public class IngredientListAdapter extends ArrayAdapter<Ingredient> {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
+
         TextView tv_name = convertView.findViewById(R.id.ingredient_name);
         TextView tv_desc = convertView.findViewById(R.id.ingredient_desc);
         TextView tv_rate = convertView.findViewById(R.id.ingredient_rate);
@@ -49,13 +49,10 @@ public class IngredientListAdapter extends ArrayAdapter<Ingredient> {
             tv_rate.setTextColor(Color.rgb(255, 0, 0));
         }
 
-
-
         tv_name.setText(name);
         tv_desc.setText(desc);
         tv_rate.setText(rate);
 
         return convertView;
     }
-
 }
