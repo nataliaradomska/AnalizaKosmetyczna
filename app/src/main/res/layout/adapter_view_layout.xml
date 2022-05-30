@@ -25,6 +25,4 @@
         android:padding="10px"
         android:id="@+id/ingredient_desc"/>
 
-
-
 </LinearLayout>

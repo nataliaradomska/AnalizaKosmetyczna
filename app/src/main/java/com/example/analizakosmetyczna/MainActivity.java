@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                     case 3: {
-                        startActivity(new Intent(MainActivity.this, Results.class));
+                        startActivity(new Intent(MainActivity.this, Products.class));
                         break;
                     }
                     default: {
