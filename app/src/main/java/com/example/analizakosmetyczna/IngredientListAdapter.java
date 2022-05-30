@@ -23,6 +23,8 @@ public class IngredientListAdapter extends ArrayAdapter<Ingredient> {
         mResource = resource;
     }
 
+
+
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

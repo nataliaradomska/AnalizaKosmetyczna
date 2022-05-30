@@ -12,6 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AnalizaKosmetyczna">
+
+        <activity
+            android:name=".ProductAcitivity"
+            android:exported="false" />
         <activity
             android:name=".Products"
             android:exported="false" />

@@ -18,12 +18,11 @@
         />
 
     <ListView
+        android:id="@+id/listview_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100px"
-        android:id="@+id/listview_product"
-        android:divider="#00000000"
-        />
+        android:divider="#00000000" />
 
 </RelativeLayout>
 

@@ -2,6 +2,7 @@ package com.example.analizakosmetyczna;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
@@ -10,10 +11,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ProductListAdapter extends ArrayAdapter<Product> {
@@ -27,6 +31,7 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
         mResource = resource;
     }
 
+
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -34,8 +39,10 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
         String desc = getItem(position).getDesc();
         int image = getItem(position).getImage();
         String status = getItem(position).getStatus();
+        String type = getItem(position).getType();
+        float rate = getItem(position).getRate();
 
-        Product product = new Product(name, desc, image, status);
+        Product product = new Product(name, desc,type, image, status, rate);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
@@ -59,6 +66,15 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
                     fav_btn.setBackground(Drawable.createFromPath("@drawable/ic_baseline_favorite_24"));
         }}});*/
 
+        LinearLayout ll_product = convertView.findViewById(R.id.ll_product);
+        ll_product.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent i_result = new Intent(mContext, ProductAcitivity.class);
+                i_result.putExtra("PRODUCT", (Serializable) product);
+                mContext.startActivity(i_result);
+            }
+        });
 
         return convertView;
     }

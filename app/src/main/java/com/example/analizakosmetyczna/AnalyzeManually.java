@@ -32,6 +32,7 @@ public class AnalyzeManually extends AppCompatActivity {
         btn_analyse = findViewById(R.id.btn_analyse);
         tv_ingredients = findViewById(R.id.tv_ingredients);
         i_result = new Intent(this, Results.class);
+
     }
 
     public void analyze(View view) {
