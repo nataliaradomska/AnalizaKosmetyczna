@@ -106,7 +106,7 @@ public class Logowanie extends AppCompatActivity {
                         error = "Niepoprawny adres e-mail!";
                     }
                 } else {
-                    error = "Niepoprawny adres e-mail!";
+                    error = "Niepoprawny adres e-mail!.";
                 }
             } catch (Exception e) {
                 error = e.getMessage();
