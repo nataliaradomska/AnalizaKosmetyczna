@@ -51,7 +51,9 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_analyse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:hint=" Wpisz składniki kosmetyku po przecinku..."
+        android:hint="Wpisz składniki kosmetyku po przecinku..."
+        android:gravity="top|left"
+        android:padding="50px"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_goneMarginTop="200px"
         android:textSize="35px"/>
