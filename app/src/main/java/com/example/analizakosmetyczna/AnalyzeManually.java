@@ -44,7 +44,7 @@ public class AnalyzeManually extends AppCompatActivity {
             ArrayList<String> param = new ArrayList<>();
             String[] ingre = ingredients.split(",");
             for (String s : ingre) {
-                param.add(s.toUpperCase());
+                param.add(s);
                 System.out.println(s);
             }
 
