@@ -72,7 +72,20 @@ public class ScanProduct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String scanned_text = tv_scanned_ingredients.getText().toString();
+
                 copyToClipBoard(scanned_text);
+                if (scanned_text.length() <= 2) {
+                    Toast.makeText(getApplicationContext(), "Wprowadź dane poprawnie.", Toast.LENGTH_LONG).show();
+                } else {
+                    ArrayList<String> param = new ArrayList<>();
+                    String[] ingre = scanned_text.split(",");
+                    for (String s : ingre) {
+                        param.add(s.toUpperCase());
+                        System.out.println(s);
+                    }
+
+                    new Analyse().execute(param);
+                }
             }
         });
 

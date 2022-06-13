@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AnalyzeManually extends AppCompatActivity {
 
@@ -44,7 +45,7 @@ public class AnalyzeManually extends AppCompatActivity {
             ArrayList<String> param = new ArrayList<>();
             String[] ingre = ingredients.split(",");
             for (String s : ingre) {
-                param.add(s);
+                param.add(s.toUpperCase());
                 System.out.println(s);
             }
 
