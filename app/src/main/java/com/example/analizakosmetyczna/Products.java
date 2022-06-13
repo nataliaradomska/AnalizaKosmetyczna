@@ -27,6 +27,7 @@ public class Products extends AppCompatActivity {
     ImageView iv_product_img;
     String prefix = "product";
     Context c;
+    User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class Products extends AppCompatActivity {
         iv_product_img = (ImageView) findViewById(R.id.product_img);
         tv_product_title = (TextView) findViewById(R.id.product_title);
         tv_product_desc = (TextView) findViewById(R.id.product_desc);
-
+        user = new User(this);
 
         new AddProducts().execute();
     }
@@ -46,6 +47,7 @@ public class Products extends AppCompatActivity {
         Connection connection;
         Statement statement;
         ArrayList<Product> products_list = new ArrayList<>();
+        int USER_ID = user.preferences.getInt("ID", 0);
         @SuppressLint("WrongThread")
         @Override
         protected final Boolean doInBackground(ArrayList<String>... param) {
@@ -62,9 +64,10 @@ public class Products extends AppCompatActivity {
                 connection = DriverManager.getConnection("jdbc:mysql://cometics.xaa.pl/p581392_cosmetics?useSSL=false", "p581392", "eOtI2Yjz7");
                 statement = connection.createStatement();
 
-                ResultSet rs = statement.executeQuery("SELECT p.name, p.description, pt.product_type, p.rate FROM products AS p LEFT JOIN product_types AS pt ON p.type=pt.id ");
+                ResultSet rs = statement.executeQuery("SELECT p.name, p.description, pt.product_type, p.rate, p.id FROM products AS p LEFT JOIN product_types AS pt ON p.type=pt.id LEFT JOIN favourite_products AS fp ON p.id=fp.id_product WHERE fp.id_user = "+String.valueOf(USER_ID));
                 while (rs.next()) {
-                    products_list.add(new Product(rs.getString(1), rs.getString(2), rs.getString(3), images.get(i), "1", rs.getFloat(4)));
+                    System.out.println("GET INT        "+rs.getInt(5));
+                    products_list.add(new Product(rs.getString(1), rs.getString(2), rs.getString(3), images.get(i), "1", rs.getFloat(4), rs.getInt(5)));
                     i++;
                 }
                 if (products_list.size() > 0) {

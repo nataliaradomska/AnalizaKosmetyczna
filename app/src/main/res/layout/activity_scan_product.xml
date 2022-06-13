@@ -3,28 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ScanProduct">
+    tools:context=".ScanProduct"
+    android:background="@drawable/main_background_transparent">
 
-    <ScrollView
-        android:layout_above="@+id/linear_holder"
-        android:layout_alignParentTop="true"
-        android:layout_margin="8dp"
+    <TextView
+        android:id="@+id/text_data"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/text_data"
-            android:textSize="22sp"
-            android:textColor="@color/black"
-            android:text="Aby zacząć, zrób nowe zdjęcie lub wybierz z albumu!"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </ScrollView>
+        android:layout_height="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Aby ropocząć skanowanie, zrób nowe zdjęcie lub wybierz z albumu!"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
 
     <LinearLayout
         android:id="@+id/linear_holder"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
         <Button
             android:id="@+id/take_photo"
             android:layout_width="0dp"
@@ -32,6 +32,7 @@
             android:layout_weight="1"
             android:text="Zrób zdjęcie"
             android:background="@color/purple_200"
+            android:gravity="center"
             android:layout_margin="8dp"/>
         <Button
             android:visibility="gone"
@@ -40,7 +41,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Skopiuj tekst"
-            android:background="@color/purple_200"
             android:layout_margin="8dp"/>
     </LinearLayout>
 

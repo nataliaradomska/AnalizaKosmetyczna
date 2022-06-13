@@ -30,6 +30,8 @@ public class SearchProduct extends AppCompatActivity {
     Context c;
     ListView listview;
     Intent i_product;
+    User user;
+    int USER_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,9 @@ public class SearchProduct extends AppCompatActivity {
         listview = findViewById(R.id.ls_search_result);
         c = this;
         i_product = new Intent(this, ProductAcitivity.class);
+
+        user = new User(this);
+        USER_ID = user.preferences.getInt("ID",0);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -84,6 +89,8 @@ public class SearchProduct extends AppCompatActivity {
         protected final Boolean doInBackground(ArrayList<String>... param) {
             try {
                 ArrayList<Integer> images = new ArrayList<>();
+                ArrayList<Integer> favouriteproducts = new ArrayList<>();
+
                 images.add(R.drawable.product1);
                 images.add(R.drawable.product2);
                 images.add(R.drawable.product3);
@@ -101,10 +108,21 @@ public class SearchProduct extends AppCompatActivity {
                     query += s + "|";
                 }
                 query = query.substring(0, query.length() - 1);
+                System.out.println("USER ID  "+USER_ID);
+                ResultSet fp = statement.executeQuery("SELECT id_product FROM favourite_products WHERE id_user = " + USER_ID);
+                while (fp.next()) {
+                    System.out.println("FP   :"+fp.getInt(1));
+                    favouriteproducts.add(fp.getInt(1));
+                }
 
-                ResultSet rs = statement.executeQuery("SELECT p.name, p.description, pt.product_type, p.rate FROM products AS p LEFT JOIN product_types AS pt ON p.type=pt.id WHERE name  REGEXP '" + query + "'");
+                ResultSet rs = statement.executeQuery("SELECT p.name, p.description, pt.product_type, p.rate, p.id FROM products AS p LEFT JOIN product_types AS pt ON p.type=pt.id WHERE name  REGEXP '" + query + "'");
                 while (rs.next()) {
-                    result.add(new Product(rs.getString(1), rs.getString(2), rs.getString(3), images.get(i), "0", rs.getFloat(4)));
+                    System.out.println("RS   :"+rs.getInt(5));
+                    if (favouriteproducts.contains(rs.getInt(5))) {
+                        result.add(new Product(rs.getString(1), rs.getString(2), rs.getString(3), images.get(i), "1", rs.getFloat(4), rs.getInt(5)));
+                    } else {
+                        result.add(new Product(rs.getString(1), rs.getString(2), rs.getString(3), images.get(i), "0", rs.getFloat(4), rs.getInt(5)));
+                    }
                     i++;
                 }
 

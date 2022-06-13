@@ -6,35 +6,44 @@
     android:orientation="horizontal"
     android:padding="30px">
 
-    <ImageView
-        android:id="@+id/product_img"
-        android:layout_width="300px"
-        android:layout_height="300px"
-        android:src="@drawable/product1" />
-
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="650px"
-        android:layout_height="match_parent"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:gravity="center"
         android:paddingLeft="15px">
 
-        <TextView
-            android:id="@+id/product_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15px"
-            android:text="Make Me Bio - Garden Roses"
-            android:textColor="@color/green"
-            android:textSize="40px" />
+        <ImageView
+            android:id="@+id/product_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/product1" />
 
-        <TextView
-            android:id="@+id/product_desc"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:padding="15px"
-            android:text="Nawilżający krem dla skóry suchej i wrażliwej"
-            android:textSize="30px" />
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            android:paddingLeft="15px">
+
+            <TextView
+                android:id="@+id/product_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15px"
+                android:text="Make Me Bio - Garden Roses"
+                android:textColor="@color/green"
+                android:textSize="35px" />
+
+            <TextView
+                android:id="@+id/product_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="15px"
+                android:text="Nawilżający krem dla skóry suchej i wrażliwej"
+                android:textSize="30px" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <Button

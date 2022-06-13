@@ -8,15 +8,20 @@ public class Product implements Serializable {
 
     private String name, desc, status, type;
     private float rate;
-    private int image;
+    private int image, id;
 
-    public Product(String name, String desc, String type, int image, String status, float rate) {
+    public Product(String name, String desc, String type, int image, String status, float rate, int id) {
         this.name = name;
         this.desc = desc;
         this.image = image;
         this.status = status;
         this.type = type;
         this.rate = rate;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getType() {return type;}

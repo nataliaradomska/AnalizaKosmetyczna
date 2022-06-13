@@ -41,8 +41,9 @@ public class ProductListAdapter extends ArrayAdapter<Product> {
         String status = getItem(position).getStatus();
         String type = getItem(position).getType();
         float rate = getItem(position).getRate();
+        int id = getItem(position).getId();
 
-        Product product = new Product(name, desc,type, image, status, rate);
+        Product product = new Product(name, desc,type, image, status, rate, id);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);

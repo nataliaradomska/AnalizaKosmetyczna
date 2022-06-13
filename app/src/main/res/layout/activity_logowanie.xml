@@ -49,9 +49,10 @@
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_pass"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintVertical_bias="0.248" />
 
         <TextView
             android:id="@+id/tv_have_account"
@@ -64,8 +65,7 @@
             android:text="Nie masz konta? Zarejestruj się!"
             android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.489"
             app:layout_constraintStart_toStartOf="parent"

@@ -10,12 +10,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ulubione produkty"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:textSize="50px"
         android:padding="15px"
-        />
+        android:text="Ulubione produkty"
+        android:textAlignment="center"
+        android:textSize="50px" />
 
     <ListView
         android:id="@+id/listview_product"
