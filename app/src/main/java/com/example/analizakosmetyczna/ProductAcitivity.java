@@ -27,6 +27,7 @@ public class ProductAcitivity extends AppCompatActivity {
     int ID_USER, ID_PRODUCT;
     String status;
     Product product;
+    boolean dataset = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +47,7 @@ public class ProductAcitivity extends AppCompatActivity {
         product_img.setImageResource(product.getImage());
         pt_product_name.setText(product.getName());
         pt_product_desc.setText(product.getDesc());
-        pt_product_type_rate.setText("Typ: " + product.getType() + "\nOcena: " + product.getRate());
-        pt_product_ingredients.setText("Składniki: ");
+
 
         btn_favourite = findViewById(R.id.btn_favourite);
 
@@ -60,7 +60,7 @@ public class ProductAcitivity extends AppCompatActivity {
             btn_favourite.setText("Dodaj do ulubionych");
         }
 
-
+        new getProductData().execute();
     }
 
     public void addToFavourite(View view) {
@@ -79,6 +79,7 @@ public class ProductAcitivity extends AppCompatActivity {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection("jdbc:mysql://cometics.xaa.pl/p581392_cosmetics?useSSL=false", "p581392", "eOtI2Yjz7");
                 statement = connection.createStatement();
+
                 if (status.equals("1")) {
                     System.out.println("ID PRODUCT    " + ID_PRODUCT);
                     statement.executeUpdate("DELETE FROM favourite_products WHERE id_product = " + ID_PRODUCT + " AND id_user = " + ID_USER);
@@ -113,6 +114,57 @@ public class ProductAcitivity extends AppCompatActivity {
                 btn_favourite.setText("Usuń z ulubionych");
             }
             Toast.makeText(getApplicationContext(), "Produkt " + returnText, Toast.LENGTH_LONG).show();
+        }
+    }
+
+    class getProductData extends AsyncTask<ArrayList<String>, Integer, Boolean> {
+        Connection connection;
+        Statement statement;
+        String ingredients;
+        int iter, suma;
+
+        @SuppressLint("WrongThread")
+        @Override
+        protected final Boolean doInBackground(ArrayList<String>... param) {
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://cometics.xaa.pl/p581392_cosmetics?useSSL=false", "p581392", "eOtI2Yjz7");
+                statement = connection.createStatement();
+
+                if (!dataset) {
+                    ResultSet rs = statement.executeQuery("SELECT ingredients.ingredient_name, ingredients.rate FROM ingredients LEFT JOIN product_ingredients ON ingredients.id = product_ingredients.id_ingredient WHERE product_ingredients.id_product = " + String.valueOf(ID_PRODUCT));
+                    ingredients = "";
+                    iter = 0;
+                    suma = 0;
+                    while (rs.next()) {
+                        ingredients += rs.getString(1) + ", ";
+                        suma += rs.getInt(2);
+                        iter++;
+                    }
+                }
+
+            } catch (Exception e) {
+                System.out.println("ERROR:  " + e.getMessage());
+            }
+
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean pass) {
+            super.onPostExecute(pass);
+            try {
+                connection.close();
+                statement.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            if (iter == 0) iter = 1;
+            pt_product_ingredients.setText("Składniki: " + ingredients);
+            product.setRate(suma / iter);
+            pt_product_type_rate.setText("Typ: " + product.getType() + "\nOcena: " + product.getRate());
+            dataset = true;
         }
     }
 }
