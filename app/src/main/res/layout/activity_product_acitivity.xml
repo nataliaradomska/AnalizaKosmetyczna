@@ -87,6 +87,7 @@
         android:layout_weight="1"
         android:background="@color/purple_200"
         android:gravity="center"
+        android:onClick="addToFavourite"
         android:text="Usuń produkt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
