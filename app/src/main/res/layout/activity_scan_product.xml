@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/text_data"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
@@ -18,6 +18,20 @@
         android:text="Aby ropocząć skanowanie, zrób nowe zdjęcie lub wybierz z albumu!"
         android:textColor="@color/black"
         android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/tv_scanned_ingredients"
+        android:layout_width="325dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/white"
+        android:gravity="top|left"
+        android:hint="Tu pojawią się składniki kosmetyku..."
+        android:padding="50px"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="35px" />
 
     <LinearLayout
         android:id="@+id/linear_holder"
@@ -40,7 +54,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Skopiuj tekst"
+            android:text="Analizuj!"
             android:layout_margin="8dp"/>
     </LinearLayout>
 
