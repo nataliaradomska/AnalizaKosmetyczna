@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
         if(user.preferences.getBoolean("LOGGED", false)) {
             btn_login.setVisibility(View.GONE);
             btn_login.setEnabled(false);
+
+        } else {
+            menu_list.setVisibility(View.GONE);
+            menu_list.setEnabled(false);
         }
     }
 
