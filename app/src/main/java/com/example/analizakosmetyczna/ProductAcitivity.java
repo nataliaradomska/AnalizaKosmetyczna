@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -38,6 +39,9 @@ public class ProductAcitivity extends AppCompatActivity {
         pt_product_type_rate = findViewById(R.id.pt_product_type_rate);
         pt_product_desc = findViewById(R.id.pt_product_desc);
         pt_product_ingredients = findViewById(R.id.pt_product_ingredients);
+
+        pt_product_ingredients.setMovementMethod(new ScrollingMovementMethod());
+        pt_product_desc.setMovementMethod(new ScrollingMovementMethod());
 
         product = (Product) getIntent().getSerializableExtra("PRODUCT");
         status = product.getStatus();

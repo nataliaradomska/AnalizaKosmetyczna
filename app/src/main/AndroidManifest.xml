@@ -11,6 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:windowSoftInputMode="adjustResize|stateHidden"
         android:theme="@style/Theme.AnalizaKosmetyczna">
 
         <activity
@@ -33,7 +34,8 @@
             android:exported="false" />
         <activity
             android:name=".SearchProduct"
-            android:exported="false" />
+            android:exported="false"/>
+            /*android:theme="@style/Background"*/
         <activity
             android:name=".AnalyzeManually"
             android:exported="false" />

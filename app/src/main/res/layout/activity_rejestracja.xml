@@ -7,11 +7,12 @@
     tools:context=".Rejestracja"
     android:background="@drawable/main_background">
 
+
         <EditText
             android:id="@+id/tv_ingredients"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="56dp"
             android:autofillHints="Podaj imię"
             android:background="@color/white"
             android:hint="Imię"
@@ -23,12 +24,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <EditText
             android:id="@+id/tv_mail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="124dp"
             android:autofillHints="Adres e-mail"
             android:background="@color/white"
             android:hint="E-mail"
@@ -36,7 +36,7 @@
             android:padding="30px"
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,7 +44,7 @@
             android:id="@+id/tv_password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="84dp"
             android:autofillHints="Hasło"
             android:background="@color/white"
             android:hint="Wpisz ponownie hasło"
@@ -53,7 +53,7 @@
             android:padding="30px"
             android:selectAllOnFocus="true"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_mail" />
 
@@ -61,7 +61,7 @@
             android:id="@+id/tv_passwordr"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:autofillHints="Hasło"
             android:background="@color/white"
             android:hint="Hasło"
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="288dp"
+            android:layout_marginBottom="280dp"
             android:background="@color/purple_200"
             android:enabled="true"
             android:onClick="register"
